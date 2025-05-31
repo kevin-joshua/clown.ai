@@ -66,7 +66,7 @@ A witty AI storyteller that brings classic literature to life with humor, visual
 
 3. **Start the FastAPI server**
    ```bash
-   python main.py
+   uvicorn main:app --reload
    ```
    The API will be available at `http://localhost:8000`
 
@@ -201,23 +201,3 @@ This project is open source and available under the [MIT License](LICENSE).
 - [ ] Voice narration capabilities
 - [ ] Story recommendation system
 - [ ] User story upload functionality
-
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**"Chroma DB already exists" message**
-- This is normal - the system skips reloading if stories are already indexed
-
-**Image generation failures**
-- Check your Google Cloud credentials and Vertex AI API access
-- Ensure PROJECT_ID environment variable is set correctly
-
-**Empty responses**
-- Verify your Gemini API key is valid and has sufficient quota
-- Check that PDF files are properly placed in the `pdfs/` directory
-
-**Frontend connection issues**
-- Ensure VITE_API_BASE_URL points to the correct backend URL
-- Check that CORS is properly configured in main.py
